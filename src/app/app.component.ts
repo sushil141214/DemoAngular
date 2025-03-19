@@ -1,16 +1,38 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { AddEmployeeNumberComponent } from './Components/add-employee-number/add-employee-number.component';
-import { EmployeeListComponent } from './Components/employee-list/employee-list.component';
+import { DataBindingComponent } from './Components/data-binding/data-binding.component';
+import { FormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,AddEmployeeNumberComponent,EmployeeListComponent],
+  imports: [RouterOutlet,DataBindingComponent,FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 
 })
 export class AppComponent {
-  title = 'DemoAngular';
+
+// Data type of typescript 
+//string,number, boolean, Data
+
+CureseName : string="Angular 18";
+ddlDefault="Maharashtra";
+
+isIndian: boolean=true;
+
+
+txtcolor: string ="bg-primary";
+
+constructor()
+{
+   this.CureseName
+}
+
+showMe(message: string){
+
+  alert(message);
+}
+  
 }
