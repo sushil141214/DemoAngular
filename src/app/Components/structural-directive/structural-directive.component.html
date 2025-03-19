@@ -1,0 +1,114 @@
+<div class="hedding">
+   
+            <h1> Structural Directive</h1>
+                     <p>*ng for *ng for </p>
+
+</div>
+
+<div class="row pt-3">
+    <div class="col-md-3">
+            <div *ngIf="isDivVisible" class="bg-danger pt-3 text-center">
+                <h4>Div-1</h4>
+            </div>
+    </div>
+    <div class="col-md-3">
+        <div *ngIf="isToggle" class="bg-success pt-3 text-center">
+            <h4>Div-2</h4>
+        </div>
+    </div>
+    <div class="col-md-3">
+    <div *ngIf="Number1==Number2" class="bg-warning pt-3 text-center">
+        <h4>Div-3</h4>
+    </div>
+    </div>
+    <div class="col-md-3">
+    <div *ngIf="selectState=='Bihar'" class="bg-primary pt-3 text-center">
+        <h4>Div-4</h4>
+    </div>
+    </div>
+</div>
+<div class="row pt-3">
+<div class="col-md-3">
+
+    <button class="btn btn-danger" (click)="divHide()">Hide</button>
+
+    <button class="btn btn-primary mx-2" (click)="divShow()"> Show</button>
+</div>
+<div class="col-md-3">
+    <button class="btn btn-success" (click)="divToggle()">Toggle</button>
+</div>
+<div class="col-md-3">
+   <input [(ngModel)]="Number1"  type="text" placeholder="Number 1">
+   <input [(ngModel)]="Number2" type="text" placeholder="Number 2">
+</div>
+<div class="col-md-3">
+    <div style="display: flex; align-items:center;">
+    <input [(ngModel)]="isActive" type="checkbox" class="width-50">
+    <select [(ngModel)]="selectState">
+        <option value="">select </option>
+        <option value="Maharashtra">Maharashtra</option>
+        <option value="UP">UP</option>
+        <option value="Gov">Gov</option>
+        <option value="Bihar">Bihar</option>
+    </select>
+    </div>
+</div>
+</div>
+<div class="row">
+    <div class="col-md-3">
+            <ul>
+                <li *ngFor="let city of cityArray">{{city}}</li>
+            </ul>
+    </div>
+    <div class="col-md-3">
+        <div *ngFor="let fname of cityArray">{{fname}}            
+        </div>
+    </div>
+    <div class="col-md-3">
+        <select>
+            <option value="">select</option>
+            <option *ngFor="let stud of studentList" value="{{stud.studentId}}">{{stud.Name}}</option>
+        </select>
+    </div>
+    <div class="col-md-3">
+        
+    </div>
+
+</div>
+ 
+<div class="row pt-3">
+        <div class="col-md-8">
+                <table class="table table-bordered">
+                    <thead>
+                    <th>
+                        Sri No.
+                    </th>
+                    <th>
+                            Name
+                    </th>
+                    <th>
+                        City
+                    </th>
+                    <th>
+                        Active
+                    </th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let Student of studentList; let srino=index">
+                        <td>{{srino+1}}</td>
+                        <td>{{Student.Name}}</td>
+                        <td>{{Student.city}}</td>
+                        <td>
+                            <span *ngIf="Student.isActive">Active</span>
+                            <span *ngIf="!Student.isActive">De-Active</span>
+                            
+                        
+                        </td>
+
+                    </tr>
+                </tbody>
+                </table>
+
+                
+        </div>
+</div>
