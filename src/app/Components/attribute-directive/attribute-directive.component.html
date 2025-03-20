@@ -11,28 +11,28 @@
 
 <div class="row">
         <div class="col-md-3">
-            <div class="div1">
+            <div class="div1" [ngClass]="divcolor">
                     <h1>Div1</h1>
             </div>
 
         </div>
 
         <div class="col-md-3">
-            <div class="div2">
+            <div class="div2" [ngClass]="isDivColor==true?'bg-warning':'bg-danger'">
                     <h1>Div2</h1>
             </div>
 
         </div>
 
         <div class="col-md-3">
-            <div class="div3">
+            <div class="div3" [ngClass]="num1==num2?'bg-primary':'bg-danger'">
                     <h1>Div3</h1>
             </div>
 
         </div>
 
         <div class="col-md-3">
-            <div class="div4">
+            <div class="div4" [ngClass]="isActive?'bg-warning':''">
                     <h1>Div4</h1>
             </div>
 
@@ -42,20 +42,23 @@
 <div class="row">
     <div class="col-md-3">
         &nbsp;&nbsp;&nbsp;&nbsp;
-        <button class="btn btn-danger">Add Red</button>&nbsp;&nbsp;&nbsp;&nbsp;
-        <button  class="btn btn-primary"> Add Blue</button>
+        <button class="btn btn-danger" (click)="addRed()">Add Red</button>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button  class="btn btn-primary" (click)="addBlue()"> Add Blue</button>
     </div>
      <div class="col-md-3">
             &nbsp;&nbsp;&nbsp;&nbsp;
-        <button class="btn btn-success">Toggle</button>
+        <button class="btn btn-success" (click)="addToggle()">Toggle</button>
     </div>
     <div class="col-md-3">
-    <input type="text" placeholder="num1"> <input type="text" placeholder="num2"> 
+        <input type="text" [(ngModel)]="num1" placeholder="num1"> 
+        <input type="text" [(ngModel)]="num2"  placeholder="num2"> 
+    
+     
         
     </div>
 
     <div class="col-md-3">
-        <input type="checkbox">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="checkbox" [(ngModel)]="isActive">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         
         <select>
             <option value="">Select</option>
@@ -68,3 +71,35 @@
         </div>
 
 </div>
+
+<div class="row pt-3">
+    <div class="col-md-8">
+            <table class="table table-bordered">
+                <thead>
+                <th>Sri No.</th>
+                <th>Name</th>
+                <th>City</th>
+                <th>Gender</th>
+                <th>Total Markss</th>
+                <th>Active</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let stud of studentList; let srino =index">
+                    <td>srino+1</td>
+                    <td>{{stud.Name}}</td>
+                    <td>{{stud.Gender}}</td>
+                    <td>{{stud.city}}</td>
+                    <td>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" [ngStyle]="{'width':stud.TotalMarks+'%'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{stud.TotalMarks}}%</div>
+                          </div> 
+                    </td>
+                    <td [ngStyle]="{'background-color':stud.isActive ? 'yellow':'red'}">{{stud.isActive?'Active':'De-Active'}}</td>
+                </tr>
+            </tbody>
+            </table>
+
+            
+    </div>
+</div>
+
