@@ -1,2 +1,21 @@
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" routerLink="emp-list">Learn Angular With Sushil</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a routerLink="add-emp">Home</a></li>
+        <li><a routerLink="add-emp">Add Employee</a></li>
+        <li><a routerLink="emp-list">Employee List</a></li>
+        <li><a routerLink="data-bind">Data Binding</a></li>
+        <li><a routerLink="structural-dir">Structural Directive</a></li>
+        <li><a routerLink="attribute-dir">Attribute Directive</a></li>
+      </ul>
+    </div>
+  </nav>
 
-<app-attribute-directive></app-attribute-directive>
+
+
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>

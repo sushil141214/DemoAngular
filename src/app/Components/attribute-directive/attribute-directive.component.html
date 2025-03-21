@@ -5,6 +5,7 @@
         <div class="hedding" >
             <h1> Attribute Directive</h1>
              <p>ngClass, ngStyle</p>
+             <button class="btn btn-primary" (click)="attributeDir()">Go to Structural Directive</button>
         </div>
 </div>
 
@@ -92,7 +93,7 @@
                     <td>
                         <div class="progress">
                             <div class="progress-bar" role="progressbar" [ngStyle]="{'width':stud.TotalMarks+'%'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{stud.TotalMarks}}%</div>
-                          </div> 
+                        </div> 
                     </td>
                     <td [ngStyle]="{'background-color':stud.isActive ? 'yellow':'red'}">{{stud.isActive?'Active':'De-Active'}}</td>
                 </tr>

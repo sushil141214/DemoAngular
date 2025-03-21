@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-attribute-directive',
@@ -10,6 +12,17 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './attribute-directive.component.css'
 })
 export class AttributeDirectiveComponent {
+
+  constructor(private roter: Router){
+
+
+  }
+
+
+  attributeDir()
+  {
+    this.roter.navigateByUrl("structural-dir");
+  }
 
   // On button click change the div color 
 
