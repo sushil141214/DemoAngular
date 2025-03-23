@@ -1,0 +1,61 @@
+<div class="row">
+    
+    <div class="hedding" >
+        <h1> Attribute Directive</h1>
+         <p>InBult Pipe and Custome Pipe in angular</p>
+         
+    </div>
+</div>
+
+<div class="row">
+    
+    <div class="col-md-3">
+      <span>Original Value:- {{userName}}</span>
+      <br/><br/>
+      <span>After Pipe:- {{userName | uppercase}}</span>
+    </div>
+    <div class="col-md-3">
+        <span>Original Value:-{{userName}}</span>
+        <br/><br/>
+      <span>After Pipe:- {{userName |lowercase}}</span>
+    </div>
+    <div class="col-md-3">
+        <span>Original Value:- {{userDescription}}</span>
+        <br/><br/>
+      <span>After Pipe:- {{userDescription| titlecase}}</span>
+    </div>
+    <div class="col-md-3">
+        <span>Original Value:-{{Current}}</span>
+        <br/><br/>
+      <span>After Pipe:-{{Current| date:'dd-MMM-yyyy'}}</span>
+    </div>
+
+</div>
+
+<br/><br/> <br/><br/> 
+<div class="row">
+    
+    <div class="col-md-3">
+
+        <span>Original Value:-{{Current}}</span>
+        <br/><br/>
+      <span>After Pipe:-{{Current| date:'hh:mm:s'}}</span>
+
+    </div>
+    <div class="col-md-3">
+        <span>Original Value:-{{student}}</span>
+        <br/><br/>
+      <span>After Pipe:- {{student| json}}</span>
+    </div>
+    <div class="col-md-3">
+        <span>Original Value:-{{currentTime}}</span>
+        <br/><br/>
+      <span>After Pipe:-{{currentTime| async}}</span>
+    </div>
+    <div class="col-md-3">
+        <span>Original Value:-{{student|json}}</span>
+        <br/><br/>
+      <span>After Pipe:-{{studentMarks|customePipe}}</span>
+    </div>
+
+</div>
