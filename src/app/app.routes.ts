@@ -7,6 +7,8 @@ import { AttributeDirectiveComponent } from './Components/attribute-directive/at
 import { IfelseComponent } from './Components/controlFlow/ifelse/ifelse.component';
 import { ForSwitchComponent } from './Components/controlFlow/for-switch/for-switch.component';
 import { PipeComponent } from './Components/pipe/pipe.component';
+import { TemplateDrivenFormsComponent } from './Angular Forms/template-driven-forms/template-driven-forms.component';
+import { ReactiveFormsComponent } from './Angular Forms/reactive-forms/reactive-forms.component';
 
 export const routes: Routes = [
 
@@ -45,8 +47,18 @@ export const routes: Routes = [
         
         path:'Pipe',
         component:PipeComponent
-    
-        }
+    },
+    {
+        
+        path:'template-dirven',
+        component:TemplateDrivenFormsComponent
+    },
+    {
+        
+        path:'Reactive-form',
+        component:ReactiveFormsComponent
+    }
+
 
 
 ];
